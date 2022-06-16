@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Cust_login"])){
-        header("Location: FrontUI.php");
+        header("Location: login.php");
     }
     else{
         if(isset($_POST["Update"])){
@@ -19,7 +19,7 @@
                 echo "
                 <script>
                     alert('Updated Success!');
-                    window.location = 'UserProfile.php';
+                    window.location = 'GU_UserProfile.php';
                 </script>";
 
             }else{
@@ -43,7 +43,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include "./Navigationbar.php" ?>
+    <?php include "./GU_Navigationbar.php" ?>
 
     <h1>Customer Profile</h1>
 

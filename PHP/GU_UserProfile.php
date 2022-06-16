@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Cust_login"])){
-        header("Location: FrontUI.php");
+        header("Location: login.php");
     }
 ?>
 
@@ -20,7 +20,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.php" ?>
+    <?php include "./GU_NavigationBar.php" ?>
 
     <h1>Admin Profile</h1>
 
@@ -62,7 +62,7 @@
         ?>    
     </form>
 
-    <a href="UpdateUserProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
+    <a href="GU_UpdateUserProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Cust_login"])){
-        header("Location: FrontUI.php");
+        header("Location: login.php");
     }else{
 
         $id = $_GET['viewid'];
@@ -18,7 +18,7 @@
                 echo "
                 <script>
                     alert('Updated Success!');
-                    window.location = 'ManageAddress.php';
+                    window.location = 'GU_ManageAddress.php';
                 </script>";
 
             }else{
@@ -43,7 +43,7 @@
 <body>
 
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.php" ?>
+    <?php include "./GU_NavigationBar.php" ?>
 
     <h1>Update User Address</h1>
 

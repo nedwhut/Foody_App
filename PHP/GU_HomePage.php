@@ -27,7 +27,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include "./Navigationbar.php" ?>
+    <?php include "./GU_Navigationbar.php" ?>
 
     <div id="main-content">
             <div id="search-section">

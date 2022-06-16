@@ -28,7 +28,7 @@
 <body> 
 
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.php" ?>
+    <?php include "./GU_NavigationBar.php" ?>
 
     <div class="bar">
         <form action="" class="search-bar">
