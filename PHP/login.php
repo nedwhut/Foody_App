@@ -7,15 +7,29 @@
         $getType = $_POST['userType'];
 
         if($getType === 'User'){
-            header ("location: GeneralUser\Login.php");
-            exit();
+            $uname= mysqli_real_escape_string($con, $_POST["username"]);
+            $password= mysqli_real_escape_string($con, $_POST["password"]);
+
+            $checkEmail = mysqli_query($con, "SELECT * from customer WHERE Cust_PhoneNum='".$uname."' limit 1");
+            
+            if (mysqli_num_rows($checkEmail) > 0) {
+
+                $row = mysqli_fetch_assoc($checkEmail);
+
+                $_SESSION["Cust_login"] = $row['Cust_ID'];
+
+                header("Location: GU_HomePage.php");
+
+            } else {
+                echo "<script>alert('Login details is incorrect. Please try again.');</script>";
+            }
         }
         else if($getType === 'Rider'){
 
             $uname= mysqli_real_escape_string($con, $_POST["username"]);
             $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-            $checkEmail = mysqli_query($con, "SELECT * from rider WHERE Rider_PhoneNum='".$uname."' AND Rider_Password='".$password."' limit 1");
+            $checkEmail = mysqli_query($con, "SELECT * from rider WHERE Rider_PhoneNum='".$uname."' limit 1");
             
             if (mysqli_num_rows($checkEmail) > 0) {
 
